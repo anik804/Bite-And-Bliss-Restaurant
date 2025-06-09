@@ -1,7 +1,21 @@
 import { NavLink } from "react-router";
 import logo from '../../assets/Logo/logo.png'
+import { use } from "react";
+import { AuthContext } from "../../Context/AuthContext/AuthContext";
 
 const Navbar = () => {
+
+  const {user,signOutUser} = use(AuthContext);
+
+  const handleSignOut = () =>{
+    signOutUser()
+    .then(()=>{
+      console.log("logout successfully")
+    })
+    .catch((error)=>{
+      console.log(error)
+      })
+  }
 
   const links = <>
   <li className="font-extrabold text-purple-500 mr-10"><NavLink to="/">Home</NavLink></li>
@@ -39,7 +53,7 @@ const Navbar = () => {
           </ul>
         </div>
           <div className="flex items-center gap-2">
-            <img src={logo} className="w-15 h-15"/>            <div>
+<img src={logo} className="w-16 h-16"/>            <div>
                           <h2 className="font-bold text-3xl text-white">Bite & Bliss</h2>
             <p className="text-sm text-gray-400 font-bold">Taste the Difference.</p>
             </div>
@@ -52,8 +66,13 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="gap-5 navbar-end">
-        <NavLink to="/register" className="btn btn-soft btn-warning">Register</NavLink>
+{
+  user ? <button onClick={handleSignOut} className="btn">Sign Out</button> :
+  <>
+          <NavLink to="/register" className="btn btn-soft btn-warning">Register</NavLink>
         <NavLink to="/login" className="btn btn-soft btn-success">Login</NavLink>
+  </>
+}
       </div>
     </div>
   );
