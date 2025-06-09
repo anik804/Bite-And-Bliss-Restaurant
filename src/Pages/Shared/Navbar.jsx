@@ -1,5 +1,5 @@
-import React from "react";
 import { NavLink } from "react-router";
+import logo from '../../assets/Logo/logo.png'
 
 const Navbar = () => {
 
@@ -11,7 +11,7 @@ const Navbar = () => {
   </>
 
   return (
-    <div className="navbar bg-base-100 shadow-sm px-5">
+    <div className="navbar bg-gradient-to-r from-gray-800 via-indigo-900 to-purple-900 shadow-sm px-5">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -38,9 +38,12 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-          <div className="">
-            <h2 className="font-bold text-3xl text-indigo-400">Bite & Bliss</h2>
-            <p className="text-sm text-gray-500 font-bold">Taste the Difference.</p>
+          <div className="flex items-center gap-2">
+            <img src={logo} className="w-15 h-15"/>            <div>
+                          <h2 className="font-bold text-3xl text-white">Bite & Bliss</h2>
+            <p className="text-sm text-gray-400 font-bold">Taste the Difference.</p>
+            </div>
+
           </div>
       </div>
       <div className="navbar-center hidden lg:flex">
