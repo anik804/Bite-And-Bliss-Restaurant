@@ -7,7 +7,12 @@ export default {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        caveat : ['Caveat', 'cursive'],
+        
+      }
+    },
   },
   plugins: [
     daisyui,

@@ -1,13 +1,16 @@
 import React from 'react';
+import Welcome from './Welcome_Page/Welcome';
+import Chef from './Chef_Section/Chef';
+import Stat from './Stat_Section/Stat';
 
 const Home = () => {
 
-  // const FoodPromise = fetch('http://localhost:3000/menu').then(res => res.json())
-
-  // const FoodPromise
   return (
     <div>
-      <h1>This is home</h1>
+      {/* <h1>This is home</h1> */}
+      <Welcome></Welcome>
+      <Chef></Chef>
+      <Stat></Stat>
     </div>
   );
 };
