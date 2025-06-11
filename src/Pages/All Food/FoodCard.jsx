@@ -1,28 +1,32 @@
 import React from "react";
 
-const FoodCard = () => {
+const FoodCard = ({food}) => {
+
+  const {photo,name,description,price_bdt,category,cuisine} = food;
+
   return (
     <div className="card bg-base-100 w-96 shadow-sm">
       <figure>
         <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+          src={photo}
           alt="Shoes"
+          className="h-60 w-96"
         />
       </figure>
       <div className="card-body">
         <h2 className="card-title">
-          Card Title
-          <div className="badge badge-secondary">NEW</div>
+          {name}
+          <div className="badge badge-secondary">{cuisine}</div>
         </h2>
         <p>
-          A card component has a figure, a body part, and inside body there are
-          title and actions parts
+          {description}
         </p>
         <div className="card-actions justify-end">
-          <div className="badge badge-outline">Fashion</div>
-          <div className="badge badge-outline">Products</div>
+          <div className="badge badge-outline">Price : {price_bdt} BDT</div>
+          <div className="badge badge-outline">Category : {category}</div>
         </div>
       </div>
+      <button className="btn btn-soft btn-accent mx-5 my-5">View Details</button>
     </div>
   );
 };
