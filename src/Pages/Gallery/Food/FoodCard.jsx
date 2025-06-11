@@ -1,18 +1,19 @@
-import React from "react";
+import React from 'react';
 
-const EnvironmentCard = ({envi}) => {
+const FoodCard = ({foods}) => {
 
-  const {image} = envi
+  const {image} = foods;
+
   return (
     <div className="card bg-base-100 w-auto h-50 shadow-sm">
       <figure>
         <img
           src={image}
-          alt="environment"
+          alt="foods"
         />
       </figure>
     </div>
   );
 };
 
-export default EnvironmentCard;
+export default FoodCard;

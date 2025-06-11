@@ -1,8 +1,9 @@
-import React from "react";
+import React from 'react';
 
-const EnvironmentCard = ({envi}) => {
+const SeafoodCard = ({seafood}) => {
 
-  const {image} = envi
+  const {image} = seafood
+
   return (
     <div className="card bg-base-100 w-auto h-50 shadow-sm">
       <figure>
@@ -15,4 +16,4 @@ const EnvironmentCard = ({envi}) => {
   );
 };
 
-export default EnvironmentCard;
+export default SeafoodCard;
