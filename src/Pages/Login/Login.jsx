@@ -1,7 +1,8 @@
 import Lottie from "lottie-react";
-import login_lottie from "../../assets/Lottie Animation/login.json";
 import { use } from "react";
+import login_lottie from "../../assets/Lottie Animation/login.json";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
+import SocialLogin from "../Shared/SocialLogin";
 
 const Login = () => {
 
@@ -31,7 +32,7 @@ const Login = () => {
   }
   
   return (
-    <div className="hero bg-amber-600 min-h-screen">
+    <div className="hero bg-gradient-to-r from-indigo-400 via-purple-700 to-pink-500 min-h-screen py-10">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <Lottie animationData={login_lottie} loop={true}></Lottie>
@@ -58,6 +59,7 @@ const Login = () => {
                 <button className="btn btn-neutral mt-4">Login</button>
               </fieldset>
             </form>
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>
