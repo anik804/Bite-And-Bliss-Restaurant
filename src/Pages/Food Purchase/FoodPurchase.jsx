@@ -1,10 +1,10 @@
-
-import { useParams } from "react-router";
+import { useLoaderData, useParams } from "react-router";
 import UseAuth from "../../Hooks/UseAuth";
 
 const FoodPurchase = () => {
   const { id: foodId } = useParams();
   const { user } = UseAuth();
+  const {name,price_bdt} = useLoaderData();
 
 
   console.log(foodId, user);
@@ -25,7 +25,7 @@ const FoodPurchase = () => {
             type="text"
             className="input"
             placeholder="Enter Food Name"
-            value={``}
+            value={name}
             readOnly
           />
 
@@ -34,7 +34,7 @@ const FoodPurchase = () => {
             type="text"
             className="input"
             placeholder="Enter Price"
-            value={``}
+            value={price_bdt}
             readOnly
           />
 
