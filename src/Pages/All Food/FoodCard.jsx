@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router";
 
 const FoodCard = ({food}) => {
 
-  const {photo,name,quantity,description,category,cuisine} = food;
+  const {photo,name,quantity,description,category,cuisine,_id} = food;
 
   return (
     <div className="card bg-base-100 w-96 shadow-sm">
@@ -26,7 +27,7 @@ const FoodCard = ({food}) => {
           <div className="badge badge-outline">Category : {category}</div>
         </div>
       </div>
-      <button className="btn btn-soft btn-accent mx-5 my-5">View Details</button>
+      <Link to={`/menu/${_id}`}><button className="btn btn-soft btn-accent w-full">View Details</button></Link>
     </div>
   );
 };
