@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import EnvironmentCard from './EnvironmentCard';
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 const Environment = () => {
   
   const [enviro, setEnviro] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     axios.get("http://localhost:3000/environment")
@@ -20,18 +25,38 @@ const Environment = () => {
       });
   }, []);
 
+  const openLightbox = (index) => {
+    setCurrentIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
+
   if (loading) return <div>Loading environment data...</div>;
   if (error) return <div>Error: {error}</div>;
 
   return (
     <div className='my-10'>
       <h1 className='text-2xl text-center font-bold'>Our Environment</h1>
-      {/* {enviro.length} */}
       <div className='grid gap-2 grid-cols-1 lg:grid-cols-3 md:grid-cols-2 my-5 mx-5'>
         {
-          enviro.map(envi => <EnvironmentCard key={envi._id} envi={envi}></EnvironmentCard>)
+          enviro.map((envi, index) => (
+            <EnvironmentCard 
+              key={envi._id} 
+              envi={envi} 
+              onClick={() => openLightbox(index)} 
+            />
+          ))
         }
       </div>
+      <Lightbox
+        open={lightboxOpen}
+        close={closeLightbox}
+        slides={enviro.map(item => ({ src: item.image }))}
+        index={currentIndex}
+      />
     </div>
   );
 };

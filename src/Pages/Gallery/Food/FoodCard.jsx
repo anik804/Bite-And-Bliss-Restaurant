@@ -1,11 +1,11 @@
 import React from 'react';
 
-const FoodCard = ({foods}) => {
+const FoodCard = ({ foods, onClick }) => {
 
-  const {image} = foods;
+  const { image } = foods;
 
   return (
-    <div className="card bg-base-100 w-auto h-50 shadow-sm">
+    <div className="card bg-base-100 w-auto h-50 shadow-sm cursor-pointer" onClick={onClick}>
       <figure>
         <img
           src={image}
