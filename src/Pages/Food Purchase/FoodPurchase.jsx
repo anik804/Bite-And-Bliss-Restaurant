@@ -1,10 +1,11 @@
-import React from "react";
+
 import { useParams } from "react-router";
 import UseAuth from "../../Hooks/UseAuth";
 
 const FoodPurchase = () => {
   const { id: foodId } = useParams();
   const { user } = UseAuth();
+
 
   console.log(foodId, user);
 
@@ -24,6 +25,7 @@ const FoodPurchase = () => {
             type="text"
             className="input"
             placeholder="Enter Food Name"
+            value={``}
             readOnly
           />
 
@@ -32,17 +34,36 @@ const FoodPurchase = () => {
             type="text"
             className="input"
             placeholder="Enter Price"
+            value={``}
             readOnly
           />
 
           <label className="label">Quantity</label>
-          <input type="number" min='1' className="input" placeholder="Food Quantity" />
+          <input
+            type="number"
+            min="1"
+            max="5"
+            className="input"
+            placeholder="Food Quantity"
+          />
 
           <label className="label">Buyer Name</label>
-          <input type="text" className="input" placeholder="Name" readOnly />
+          <input
+            type="text"
+            className="input"
+            placeholder="Name"
+            value={user?.displayName || user?.name || ""}
+            readOnly
+          />
 
           <label className="label">Buyer Email</label>
-          <input type="text" className="input" placeholder="Name" readOnly />
+          <input
+            type="text"
+            className="input"
+            placeholder="Name"
+            value={user?.email || ""}
+            readOnly
+          />
           <label className="label">Buying Date</label>
           <input
             type="text"
