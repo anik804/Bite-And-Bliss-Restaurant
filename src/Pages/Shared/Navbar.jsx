@@ -2,6 +2,7 @@ import { use } from "react";
 import { NavLink } from "react-router";
 import logo from '../../assets/Logo/logo.png';
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
+import ThemeToggleButton from "../../Context/ThemeContext/ThemeToggleButton";
 
 const Navbar = () => {
 
@@ -71,6 +72,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="flex flex-col sm:flex-row gap-3 items-center navbar-end">
+        <ThemeToggleButton></ThemeToggleButton>
         {user ? (
           <button onClick={handleSignOut} className="btn w-full sm:w-auto">
             Sign Out

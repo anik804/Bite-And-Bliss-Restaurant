@@ -3,7 +3,6 @@ import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router";
 import router from "./Router/Router.jsx";
 import AuthProvider from "./Context/AuthContext/AuthProvider.jsx";
-import ThemeProvider from "./Context/ThemeContext/ThemeProvider.jsx";
 import './index.css';
 import './App.css';
 
