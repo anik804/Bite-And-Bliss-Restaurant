@@ -2,7 +2,7 @@ import React from "react";
 
 const FoodCard = ({food}) => {
 
-  const {photo,name,description,price_bdt,category,cuisine} = food;
+  const {photo,name,quantity,description,category,cuisine} = food;
 
   return (
     <div className="card bg-base-100 w-96 shadow-sm">
@@ -22,7 +22,7 @@ const FoodCard = ({food}) => {
           {description}
         </p>
         <div className="card-actions justify-end">
-          <div className="badge badge-outline">Price : {price_bdt} BDT</div>
+          <div className="badge badge-outline">Quantity : {quantity}</div>
           <div className="badge badge-outline">Category : {category}</div>
         </div>
       </div>
