@@ -3,6 +3,7 @@ import Welcome from './Welcome_Page/Welcome';
 import Chef from './Chef_Section/Chef';
 import Stat from './Stat_Section/Stat';
 import Carousel from './Carousel/Carousel';
+import Banner from './Banner/Banner';
 // import {render} from 'react-dom';
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
   return (
     <div>
       {/* <h1>This is home</h1> */}
+      <Banner></Banner>
       <Welcome></Welcome>
       {/* <Carousel></Carousel> */}
       {/* <Carousel></Carousel> */}
