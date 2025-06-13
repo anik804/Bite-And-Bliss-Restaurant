@@ -14,7 +14,7 @@ const OrderTable = ({ order,index }) => {
       <td>{quantity}</td>
       <td>{buyingDate}</td>
       <td>{buyerName}</td>
-      <td className="px-2"><button className="btn btn-outline btn-error my-2 text-xs">Cancel Order</button></td>
+      <td className="px-2o"><button className="btn btn-outline btn-error my-2 text-xs">Cancel Order</button></td>
       
 
     </tr>
