@@ -10,6 +10,7 @@ import Gallery from "../Pages/Gallery/Gallery";
 import FoodDetails from "../Pages/All Food/FoodDetails";
 import PrivateRoute from "../Routes/PrivateRoute";
 import FoodPurchase from "../Pages/Food Purchase/FoodPurchase";
+import MyOrders from "../Pages/My Orders/MyOrders";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
         path: "purchase/:id",
         element: <PrivateRoute><FoodPurchase></FoodPurchase></PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:3000/menu/${params.id}`)
+
+      },
+      {
+        path: '/myorders',
+        element: <PrivateRoute><MyOrders></MyOrders></PrivateRoute>
 
       },
       {

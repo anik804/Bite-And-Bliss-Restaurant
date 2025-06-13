@@ -79,7 +79,8 @@ const Navbar = () => {
         <div className="w-10 rounded-full">
           <img
             alt="User profile"
-            src={user?.photoURL || "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"} />
+            src={user?.photoURL ||"https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"}
+            referrerPolicy="no-referrer" />
         </div>
       </div>
       <ul
@@ -92,7 +93,7 @@ const Navbar = () => {
           </a>
         </li>
         <li><a>Add Food</a></li>
-        <li><a>My Orders</a></li>
+        <li><NavLink to='/myorders'>My Orders</NavLink></li>
         <li onClick={handleSignOut}><NavLink to='/login'>Logout</NavLink></li>
       </ul>
     </div>
