@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import FoodCard from "./FoodCard";
+import { motion } from "framer-motion";
 const AllFood = () => {
   const [foods, setFood] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -30,7 +31,20 @@ const AllFood = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-center my-10">Menu Section</h1>
+            <motion.h1
+        className="text-4xl font-bold text-center my-10"
+        animate={{
+          color: ["#FF0000", "#00FF00", "#0000FF", "#FFD700", "#FF69B4"], // cycle through red, green, blue, gold, pink
+        }}
+        transition={{
+          duration: 8,
+          ease: "easeInOut",
+          repeat: Infinity,
+          repeatType: "loop",
+        }}
+      >
+        Explore Our Selection of Delicious Creations
+      </motion.h1>
 
       <div className="flex justify-center">
         <label className="input w-3/5 my-5">

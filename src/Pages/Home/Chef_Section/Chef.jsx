@@ -63,7 +63,7 @@ const Chef = () => {
           </motion.h2>
 
           <motion.p
-            className="text-sm md:text-base pt-2 text-justify leading-relaxed"
+            className="text-sm md:text-base pt-2 text-justify leading-relaxed text-purple-800"
             variants={paragraphVariant}
             initial="hidden"
             whileInView="visible"
