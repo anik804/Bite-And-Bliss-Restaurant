@@ -1,11 +1,33 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import CountUp from 'react-countup';
+import { motion, useAnimation } from 'framer-motion';
 
 const Stat = () => {
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start({
+      backgroundImage: [
+        'linear-gradient(to right, #f43f5e, #3b82f6)', // pink to blue
+        'linear-gradient(to right, #3b82f6, #f43f5e)', // blue to pink
+      ],
+      transition: {
+        duration: 4,
+        repeat: Infinity,
+        repeatType: 'reverse',
+      },
+    });
+  }, [controls]);
+
   return (
     <div className="mx-5">
-      <h1 className="font-bold text-4xl text-center">Our Achievements</h1>
+      <motion.h1
+        className="font-bold text-4xl text-center bg-clip-text text-transparent"
+        animate={controls}
+      >
+        Our Achievements
+      </motion.h1>
+
       <div className="stats shadow my-10 w-full flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
         <div className="stat w-full md:w-1/3">
           <div className="stat-figure text-primary">
@@ -57,7 +79,10 @@ const Stat = () => {
           <div className="stat-figure text-secondary">
             <div className="avatar avatar-online">
               <div className="w-16 rounded-full">
-                <img src="https://img.daisyui.com/images/profile/demo/anakeen@192.webp" alt="avatar" />
+                <img
+                  src="https://img.daisyui.com/images/profile/demo/anakeen@192.webp"
+                  alt="avatar"
+                />
               </div>
             </div>
           </div>

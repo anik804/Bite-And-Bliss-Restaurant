@@ -40,13 +40,13 @@ const Footer = () => {
         </aside>
         <nav className="md:place-self-center md:justify-self-end">
           <div className="grid grid-flow-col gap-2 items-center justify-center">
-            <a>
+            <a href="https://www.facebook.com/share/1LLmiEeYXT/" target="_blank" rel="noopener noreferrer">
               <FaFacebookSquare className="w-8 h-8" />
             </a>
-            <a>
+            <a href="https://www.instagram.com/anik_804/" target="_blank" rel="noopener noreferrer">
               <AiFillInstagram className="w-8 h-8" />
             </a>
-            <a>
+            <a href="https://www.linkedin.com/in/anik-chakraborty-101962262/" target="_blank" rel="noopener noreferrer">
               <GrLinkedin className="w-8 h-8" />
             </a>
           </div>

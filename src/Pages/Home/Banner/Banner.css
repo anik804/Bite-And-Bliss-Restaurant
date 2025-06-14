@@ -1,0 +1,13 @@
+.banner-bg {
+  background-image: url('./banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* to match min-h-screen */
+}
+
+@media (max-width: 768px) {
+  .banner-bg {
+    background-image: url('./banner2.jpg'); /* smaller image for mobiles */
+  }
+}
