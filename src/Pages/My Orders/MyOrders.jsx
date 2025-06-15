@@ -1,4 +1,3 @@
-// 
 import React, { Suspense } from 'react';
 import OrderList from './OrderList';
 import UseAuth from '../../Hooks/UseAuth';
