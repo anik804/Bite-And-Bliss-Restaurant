@@ -39,7 +39,7 @@ const Environment = () => {
 
   return (
     <div className='my-10'>
-      <h1 className='text-2xl text-center font-bold'>Our Environment</h1>
+      <h1 className='text-2xl text-center font-bold'>Our Inside Environment</h1>
       <div className='grid gap-2 grid-cols-1 lg:grid-cols-3 md:grid-cols-2 my-5 mx-5'>
         {
           enviro.map((envi, index) => (
