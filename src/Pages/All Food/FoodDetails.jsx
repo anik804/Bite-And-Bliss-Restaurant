@@ -1,8 +1,8 @@
 
-import React, { useEffect, useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
 import axios from "axios";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
 
 // Animated heading component
 const AnimatedHeading = () => {
@@ -46,7 +46,7 @@ const FoodDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/purchase-count/${_id}`)
+      .get(`https://bite-and-bliss-server-side.vercel.app/purchase-count/${_id}`)
       .then((res) => {
         setPurchaseCount(res.data.count || 0);
       })

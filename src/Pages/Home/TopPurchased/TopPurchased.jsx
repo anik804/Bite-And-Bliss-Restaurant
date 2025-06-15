@@ -1,7 +1,7 @@
 import axios from "axios";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 
 const colors = ["#FF6347", "#20B2AA", "#FFA500", "#6A5ACD", "#32CD32"];
 
@@ -10,7 +10,7 @@ const TopPurchased = () => {
   const [colorIndex, setColorIndex] = useState(0);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/top-purchased").then((res) => {
+    axios.get("https://bite-and-bliss-server-side.vercel.app/top-purchased").then((res) => {
       setTopFoods(res.data);
     });
 

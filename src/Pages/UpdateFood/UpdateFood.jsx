@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { useLoaderData, useNavigate } from "react-router-dom";
-import UseAuth from "../../Hooks/UseAuth";
 import axios from "axios";
+import { useState } from "react";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import bg from "../../assets/bg.jpg";
+import UseAuth from "../../Hooks/UseAuth";
 
 const UpdateFood = () => {
   const food = useLoaderData(); // Get initial food data from loader
@@ -33,7 +33,7 @@ const UpdateFood = () => {
     };
 
     axios
-      .put(`http://localhost:3000/menu/${food._id}`, updatedData)
+      .put(`https://bite-and-bliss-server-side.vercel.app/menu/${food._id}`, updatedData)
       .then(() => {
         Swal.fire({
           title: "Food Updated Successfully",

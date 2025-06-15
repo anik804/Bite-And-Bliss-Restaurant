@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import EnvironmentCard from './EnvironmentCard';
+import { useEffect, useState } from 'react';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import EnvironmentCard from './EnvironmentCard';
 
 const Environment = () => {
   
@@ -14,7 +14,7 @@ const Environment = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/environment")
+    axios.get("https://bite-and-bliss-server-side.vercel.app/environment")
       .then(res => {
         setEnviro(res.data);
         setLoading(false);

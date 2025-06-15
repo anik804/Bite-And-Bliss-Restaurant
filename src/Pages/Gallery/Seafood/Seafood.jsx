@@ -1,8 +1,8 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import SeafoodCard from "./SeafoodCard";
+import { useEffect, useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import SeafoodCard from "./SeafoodCard";
 
 const Seafood = () => {
   const [sea, setSea] = useState([]);
@@ -14,7 +14,7 @@ const Seafood = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/seafood")
+      .get("https://bite-and-bliss-server-side.vercel.app/seafood")
       .then((res) => {
         setSea(res.data);
         setLoading(false);

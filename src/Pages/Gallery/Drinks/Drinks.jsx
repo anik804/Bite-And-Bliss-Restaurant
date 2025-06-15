@@ -1,8 +1,8 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import DrinksCard from "./DrinksCard";
+import { useEffect, useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import DrinksCard from "./DrinksCard";
 
 const Drinks = () => {
   const [drink, setDrink] = useState([]);
@@ -14,7 +14,7 @@ const Drinks = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/drinks")
+      .get("https://bite-and-bliss-server-side.vercel.app/drinks")
       .then((res) => {
         setDrink(res.data);
         setLoading(false);

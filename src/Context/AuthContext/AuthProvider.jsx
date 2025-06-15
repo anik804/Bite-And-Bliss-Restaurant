@@ -1,5 +1,4 @@
-import React, {  useEffect, useState } from "react";
-import { AuthContext } from "./AuthContext";
+import axios from "axios";
 import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
@@ -8,8 +7,9 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
+import { useEffect, useState } from "react";
 import { auth } from "../../Firebase/firebase.init";
-import axios from "axios";
+import { AuthContext } from "./AuthContext";
 
 
 const googleProvider = new GoogleAuthProvider();
@@ -46,7 +46,7 @@ const AuthProvider = ({ children }) => {
       // jwt related task krbo
       if(currentUser?.email){
         const userData ={email: currentUser.email};
-        axios.post('http://localhost:3000/jwt',userData,{
+        axios.post('https://bite-and-bliss-server-side.vercel.app/jwt',userData,{
           withCredentials: true
         }).then(res =>{
           console.log(res.data)

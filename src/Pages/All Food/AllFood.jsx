@@ -1,7 +1,7 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import FoodCard from "./FoodCard";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import FoodCard from "./FoodCard";
 const AllFood = () => {
   const [foods, setFood] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -10,7 +10,7 @@ const AllFood = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/menu")
+      .get("https://bite-and-bliss-server-side.vercel.app/menu")
       .then((res) => {
         setFood(res.data);
         setLoading(false);

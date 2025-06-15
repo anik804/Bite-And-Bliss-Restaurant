@@ -1,9 +1,9 @@
-import { useLoaderData, useParams, useNavigate, Link } from "react-router";
-import UseAuth from "../../Hooks/UseAuth";
 import axios from "axios";
-import Swal from "sweetalert2";
-import { useEffect } from "react";
 import { motion } from "framer-motion"; // <- import framer motion
+import { useEffect } from "react";
+import { Link, useLoaderData, useNavigate, useParams } from "react-router";
+import Swal from "sweetalert2";
+import UseAuth from "../../Hooks/UseAuth";
 
 const FoodPurchase = () => {
   const { id: foodId } = useParams();
@@ -65,7 +65,7 @@ const FoodPurchase = () => {
     };
 
     axios
-      .post("http://localhost:3000/purchase", buyerData)
+      .post("https://bite-and-bliss-server-side.vercel.app/purchase", buyerData)
       .then((res) => {
         Swal.fire({
           icon: "success",

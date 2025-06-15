@@ -1,9 +1,8 @@
-import React from "react";
-import UseAuth from "../../Hooks/UseAuth";
 import axios from "axios";
+import { Link } from "react-router";
 import Swal from "sweetalert2";
 import bg from "../../assets/bg.jpg"; // <-- import your bg image here
-import { Link } from "react-router";
+import UseAuth from "../../Hooks/UseAuth";
 
 const AddFood = () => {
   const { user } = UseAuth();
@@ -17,7 +16,7 @@ const AddFood = () => {
     delete data._id;
 
     axios
-      .post("http://localhost:3000/menu", data,{withCredentials: true})
+      .post("https://bite-and-bliss-server-side.vercel.app/menu", data,{withCredentials: true})
       .then(() => {
         Swal.fire({
           title: "Your Food Added Successfully",

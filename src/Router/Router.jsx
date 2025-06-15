@@ -1,17 +1,17 @@
 import { createBrowserRouter } from "react-router";
 import RootLayout from "../Layouts/RootLayout";
-import Home from "../Pages/Home/Home";
-import Register from "../Pages/Register/Register";
-import Login from "../Pages/Login/Login";
-import AllFood from "../Pages/All Food/AllFood";
-import Gallery from "../Pages/Gallery/Gallery";
-import FoodDetails from "../Pages/All Food/FoodDetails";
-import PrivateRoute from "../Routes/PrivateRoute";
-import FoodPurchase from "../Pages/Food Purchase/FoodPurchase";
-import MyOrders from "../Pages/My Orders/MyOrders";
 import AddFood from "../Pages/AddFood/AddFood";
+import AllFood from "../Pages/All Food/AllFood";
+import FoodDetails from "../Pages/All Food/FoodDetails";
+import FoodPurchase from "../Pages/Food Purchase/FoodPurchase";
+import Gallery from "../Pages/Gallery/Gallery";
+import Home from "../Pages/Home/Home";
+import Login from "../Pages/Login/Login";
 import MyFood from "../Pages/My Food/MyFood";
+import MyOrders from "../Pages/My Orders/MyOrders";
+import Register from "../Pages/Register/Register";
 import UpdateFood from "../Pages/UpdateFood/UpdateFood";
+import PrivateRoute from "../Routes/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         path: "/menu/:id",
         Component: FoodDetails,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/menu/${params.id}`),
+          fetch(`https://bite-and-bliss-server-side.vercel.app/menu/${params.id}`),
       },
       {
         path: "purchase/:id",
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/menu/${params.id}`),
+          fetch(`https://bite-and-bliss-server-side.vercel.app/menu/${params.id}`),
       },
       {
         path: "/myorders",
@@ -74,7 +74,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/menu/${params.id}`),
+          fetch(`https://bite-and-bliss-server-side.vercel.app/menu/${params.id}`),
       },
 
       {

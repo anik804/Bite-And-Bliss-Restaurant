@@ -1,7 +1,7 @@
-import { use, useState } from "react";
-import OrderTable from "./OrderTable";
 import axios from "axios";
+import { use, useState } from "react";
 import Swal from "sweetalert2";
+import OrderTable from "./OrderTable";
 
 const OrderList = ({ myOrderPromise }) => {
   const initialOrders = use(myOrderPromise);
@@ -25,12 +25,12 @@ const OrderList = ({ myOrderPromise }) => {
     if (!orderToDelete) return;
 
     try {
-      const res = await axios.delete(`http://localhost:3000/purchase/${id}`);
+      const res = await axios.delete(`https://bite-and-bliss-server-side.vercel.app/purchase/${id}`);
 
       if (res.data.deletedCount > 0) {
         setOrders(prev => prev.filter(order => order._id !== id));
 
-        await axios.patch(`http://localhost:3000/foods/${orderToDelete.foodId}/restore`, {
+        await axios.patch(`https://bite-and-bliss-server-side.vercel.app/foods/${orderToDelete.foodId}/restore`, {
           quantity: orderToDelete.quantity
         });
 
