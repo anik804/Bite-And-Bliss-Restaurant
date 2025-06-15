@@ -9,6 +9,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { auth } from "../../Firebase/firebase.init";
+import axios from "axios";
 
 
 const googleProvider = new GoogleAuthProvider();
@@ -41,6 +42,26 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth,currentUser =>{
       setUser(currentUser);
       setLoading(false);
+
+      // jwt related task krbo
+      if(currentUser?.email){
+        const userData ={email: currentUser.email};
+        axios.post('http://localhost:3000/jwt',userData,{
+          withCredentials: true
+        }).then(res =>{
+          console.log(res.data)
+        })
+        .catch(error =>{
+          console.log(error);
+        })
+      }
+
+
+
+
+
+
+
       console.log('use in the auth state',currentUser)
 
     });

@@ -5,9 +5,12 @@ import { use } from "react";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
 import { updateProfile } from "firebase/auth";
 import SocialLogin from "../Shared/SocialLogin";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const { createUser } = use(AuthContext);
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -17,24 +20,56 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log(email, password);
+    const hasUppercase = /[A-Z]/.test(password);
+    const hasLowercase = /[a-z]/.test(password);
+    const isLongEnough = password.length >= 6;
+
+    if (!hasUppercase || !hasLowercase || !isLongEnough) {
+      Swal.fire({
+        icon: "error",
+        title: "Invalid Password",
+        text: "Password must have at least 6 characters, including uppercase and lowercase letters.",
+        toast: true,
+        position: "top-end",
+        timer: 4000,
+        timerProgressBar: true,
+        showConfirmButton: false,
+      });
+      return;
+    }
 
     createUser(email, password)
       .then((result) => {
-        console.log("login success", result.user);
         updateProfile(result.user, {
           displayName: name,
           photoURL: photoURL || null,
         })
           .then(() => {
-            console.log("User profile updated with displayName and photoURL");
+            // Show success alert and then redirect
+            Swal.fire({
+              icon: "success",
+              title: "Registration Successful",
+              text: "You have registered successfully! Please login now.",
+              confirmButtonText: "OK",
+            }).then(() => {
+              navigate("/");
+            });
           })
           .catch((error) => {
             console.log("Error updating user profile:", error);
           });
       })
       .catch((error) => {
-        console.log(error);
+        Swal.fire({
+          icon: "error",
+          title: "Registration Failed",
+          text: error.message,
+          toast: true,
+          position: "top-end",
+          timer: 4000,
+          timerProgressBar: true,
+          showConfirmButton: false,
+        });
       });
   };
 
@@ -46,7 +81,7 @@ const Register = () => {
             animationData={register_lottie}
             className="w-full max-w-md mx-auto lg:max-w-lg"
             loop={true}
-          ></Lottie>
+          />
         </div>
         <div className="card bg-base-100 w-full max-w-md shrink-0 shadow-2xl p-6 sm:p-8">
           <div className="card-body">
@@ -71,13 +106,13 @@ const Register = () => {
                   placeholder="Enter Photo Url"
                   required
                 />
-
                 <label className="label">Email</label>
                 <input
                   type="email"
                   className="input w-full"
                   name="email"
                   placeholder="Email"
+                  required
                 />
                 <label className="label">Password</label>
                 <input
@@ -85,6 +120,7 @@ const Register = () => {
                   className="input w-full"
                   placeholder="Password"
                   name="password"
+                  required
                 />
                 <div>
                   <a className="link link-hover">Forgot password?</a>
@@ -94,7 +130,7 @@ const Register = () => {
                 </button>
               </fieldset>
             </form>
-            <SocialLogin></SocialLogin>
+            <SocialLogin />
           </div>
         </div>
       </div>

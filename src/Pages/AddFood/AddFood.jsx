@@ -17,7 +17,7 @@ const AddFood = () => {
     delete data._id;
 
     axios
-      .post("http://localhost:3000/menu", data)
+      .post("http://localhost:3000/menu", data,{withCredentials: true})
       .then(() => {
         Swal.fire({
           title: "Your Food Added Successfully",

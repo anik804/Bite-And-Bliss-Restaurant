@@ -1,12 +1,41 @@
-# React + Vite
+# Bite & Bliss
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Purpose
+Bite & Bliss is a restaurant management and food ordering site that provides users with a seamless experience to browse food items, place orders, and manage their food selections. The application includes user authentication and protected routes for personalized features.
 
-Currently, two official plugins are available:
+## Live URL
+Currently, the live URL is not available. For local development, run the project locally using the development server.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Features
+- Home page with featured content
+- Browse all food items
+- View detailed information about each food item
+- Food purchase functionality (protected route, requires login)
+- View and manage user orders (protected route)
+- Add new food items (protected route)
+- View user's own food items (protected route)
+- Update existing food items (protected route)
+- Gallery showcasing food and environment
+- User registration and login
 
-## Expanding the ESLint configuration
+## NPM Packages Used
+- react
+- react-dom
+- react-router
+- react-router-dom
+- axios
+- firebase
+- framer-motion
+- lottie-react
+- react-countup
+- react-icons
+- react-toastify
+- sweetalert2
+- tailwindcss
+- yet-another-react-lightbox
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Development Scripts
+- `npm run dev` - Start the development server
+- `npm run build` - Build the project for production
+- `npm run preview` - Preview the production build
+- `npm run lint` - Run ESLint to check code quality
