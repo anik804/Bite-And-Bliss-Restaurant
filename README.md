@@ -4,7 +4,7 @@
 Bite & Bliss is a restaurant management and food ordering site that provides users with a seamless experience to browse food items, place orders, and manage their food selections. The application includes user authentication and protected routes for personalized features.
 
 ## Live URL
-Currently, the live URL is not available. For local development, run the project locally using the development server.
+The project is live at: [https://bite-and-bliss-restaurant.web.app/](https://bite-and-bliss-restaurant.web.app/)
 
 ## Key Features
 - Home page with featured content
