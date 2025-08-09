@@ -17,7 +17,7 @@ const MyOrders = () => {
         minHeight: '100vh',   // ensure full viewport height
         padding: '2rem',
       }}
-      className="text-white mt-20" // adjust text color if needed for visibility
+      className="text-white" // adjust text color if needed for visibility
     >
       <motion.h1
         className="text-4xl font-bold text-center mb-8"

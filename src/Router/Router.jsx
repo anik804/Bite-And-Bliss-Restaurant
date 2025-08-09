@@ -15,6 +15,8 @@ import PrivateRoute from "../Routes/PrivateRoute";
 import { Component } from "react";
 import AboutUs from "../Pages/About Us/AboutUs";
 import ErrorPage from "../Pages/Error Page/ErrorPage";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import DashboardHome from "../Pages/Dashboard/DashboardHome";
 
 const router = createBrowserRouter([
   {
@@ -46,40 +48,37 @@ const router = createBrowserRouter([
           fetch(`https://bite-and-bliss-server-side.vercel.app/menu/${params.id}`),
       },
       {
-        path: "/myorders",
+        path: "/dashboard",
         element: (
           <PrivateRoute>
-            <MyOrders></MyOrders>
+            <Dashboard />
           </PrivateRoute>
         ),
+        children: [
+          {
+            index: true,
+            element: <DashboardHome />,
+          },
+          {
+            path: "myfood",
+            element: <MyFood />,
+          },
+          {
+            path: "myorders",
+            element: <MyOrders />,
+          },
+          {
+            path: "addfood",
+            element: <AddFood />,
+          },
+          {
+            path: "update-food/:id",
+            element: <UpdateFood />,
+            loader: ({ params }) =>
+              fetch(`https://bite-and-bliss-server-side.vercel.app/menu/${params.id}`),
+          },
+        ],
       },
-      {
-        path: "/addFood",
-        element: (
-          <PrivateRoute>
-            <AddFood></AddFood>
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "/myfood",
-        element: (
-          <PrivateRoute>
-            <MyFood></MyFood>
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "/update-food/:id",
-        element: (
-          <PrivateRoute>
-            <UpdateFood />
-          </PrivateRoute>
-        ),
-        loader: ({ params }) =>
-          fetch(`https://bite-and-bliss-server-side.vercel.app/menu/${params.id}`),
-      },
-
       {
         path: "/gallery",
         Component: Gallery,

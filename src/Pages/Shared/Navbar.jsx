@@ -107,14 +107,17 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <li>
-                <NavLink to="/myfood">My Foods</NavLink>
+                <NavLink to="/dashboard">Dashboard</NavLink>
+              </li>
+              {/* <li>
+                <NavLink to="/dashboard/myfood">My Foods</NavLink>
               </li>
               <li>
-                <NavLink to="/addFood">Add Food</NavLink>
+                <NavLink to="/dashboard/addfood">Add Food</NavLink>
               </li>
               <li>
-                <NavLink to="/myorders">My Orders</NavLink>
-              </li>
+                <NavLink to="/dashboard/myorders">My Orders</NavLink>
+              </li> */}
               <li onClick={handleSignOut}>
                 <NavLink to="/login">Logout</NavLink>
               </li>

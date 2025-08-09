@@ -44,7 +44,50 @@ const OrderList = ({ myOrderPromise }) => {
 
   return (
     <div>
-      <div className="overflow-x-auto my-10 mx-auto max-w-full px-4">
+      {/* Mobile Card Layout */}
+      <div className="lg:hidden space-y-4 px-4 py-6">
+        {orders.length === 0 ? (
+          <div className="text-center py-8 text-white">
+            <p className="text-lg">No orders found.</p>
+          </div>
+        ) : (
+          orders.map((order, index) => (
+            <div key={order._id} className="bg-white bg-opacity-95 rounded-lg p-4 shadow-lg">
+              <div className="flex items-center space-x-4 mb-3">
+                <img
+                  src={order.foodPhoto || "/default-food.png"}
+                  alt={order.foodName}
+                  className="w-20 h-20 object-cover rounded"
+                />
+                <div className="flex-1">
+                  <h3 className="font-bold text-lg">{order.foodName}</h3>
+                  <p className="text-sm text-gray-600">{order.buyerName}</p>
+                  <p className="text-lg font-bold text-green-600">{order.foodPrice} BDT</p>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-2 text-sm mb-3">
+                <div>
+                  <span className="font-semibold">Quantity:</span> {order.quantity}
+                </div>
+                <div>
+                  <span className="font-semibold">Date:</span> {new Date(order.buyingDate).toLocaleDateString()}
+                </div>
+              </div>
+              
+              <button
+                onClick={() => handleDelete(order._id)}
+                className="btn btn-sm btn-error w-full"
+              >
+                Cancel Order
+              </button>
+            </div>
+          ))
+        )}
+      </div>
+
+      {/* Desktop Table Layout */}
+      <div className="hidden lg:block overflow-x-auto my-10 mx-auto max-w-full px-4">
         <table className="table min-w-full border-collapse border border-gray-300">
           <thead className="bg-gray-700 text-white">
             <tr>

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Link } from "react-router";
 import Swal from "sweetalert2";
-import bg from "../../assets/bg.jpg"; // <-- import your bg image here
+// import bg from "../../assets/bg.jpg"; // <-- import your bg image here
 import UseAuth from "../../Hooks/UseAuth";
 
 const AddFood = () => {
@@ -36,13 +36,12 @@ const AddFood = () => {
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center flex items-center justify-center pt-20 px-4 sm:px-6 lg:px-8"
-      style={{ backgroundImage: `url(${bg})` }}
+      className="min-h-screen bg-cover bg-center flex items-center justify-center px-4 sm:px-6 lg:px-8"
     >
       {/* Overlay for better readability */}
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="bg-black opacity-50"></div>
 
-      <div className="relative z-10 max-w-4xl w-full bg-base-200 bg-opacity-90 rounded-lg p-6 shadow-lg my-10">
+      <div className="max-w-4xl w-full bg-base-200 bg-opacity-90 rounded-lg p-6 shadow-lg my-10">
         <h1 className="text-center font-bold my-5 text-3xl border-2 py-5 rounded-2xl border-gray-300 bg-white bg-opacity-70">
           Add a New Delight to the Menu
         </h1>

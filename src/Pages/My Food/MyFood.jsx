@@ -7,7 +7,7 @@ const MyFood = () => {
   const { user } = UseAuth();
 
   return (
-    <div className="pt-20"> {/* Padding to push content below navbar */}
+    <div className=""> {/* Padding to push content below navbar */}
       <Suspense
         fallback={
           <div className="flex items-center justify-center min-h-screen">
