@@ -14,6 +14,7 @@ import UpdateFood from "../Pages/UpdateFood/UpdateFood";
 import PrivateRoute from "../Routes/PrivateRoute";
 import { Component } from "react";
 import AboutUs from "../Pages/About Us/AboutUs";
+import ErrorPage from "../Pages/Error Page/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -95,6 +96,10 @@ const router = createBrowserRouter([
         path: "/login",
         Component: Login,
       },
+      {
+        path: "*",
+        Component: ErrorPage,
+      }
     ],
   },
 ]);
