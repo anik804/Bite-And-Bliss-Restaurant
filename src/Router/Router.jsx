@@ -12,6 +12,8 @@ import MyOrders from "../Pages/My Orders/MyOrders";
 import Register from "../Pages/Register/Register";
 import UpdateFood from "../Pages/UpdateFood/UpdateFood";
 import PrivateRoute from "../Routes/PrivateRoute";
+import { Component } from "react";
+import AboutUs from "../Pages/About Us/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -80,6 +82,10 @@ const router = createBrowserRouter([
       {
         path: "/gallery",
         Component: Gallery,
+      },
+      {
+        path: "/aboutus",
+        Component: AboutUs,
       },
       {
         path: "/register",

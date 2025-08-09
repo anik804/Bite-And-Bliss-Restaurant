@@ -28,6 +28,9 @@ const Navbar = () => {
       <li className="font-extrabold text-lime-400 mr-10">
         <NavLink to="/gallery">Gallery</NavLink>
       </li>
+      <li className="font-extrabold text-pink-400 mr-10">
+        <NavLink to="/aboutus">About Us</NavLink>
+      </li>
     </>
   );
 
