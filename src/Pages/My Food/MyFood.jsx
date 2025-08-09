@@ -7,8 +7,7 @@ const MyFood = () => {
   const { user } = UseAuth();
 
   return (
-    <div>
-      
+    <div className="pt-20"> {/* Padding to push content below navbar */}
       <Suspense
         fallback={
           <div className="flex items-center justify-center min-h-screen">
@@ -16,7 +15,10 @@ const MyFood = () => {
           </div>
         }
       >
-        <Foods foodCreatedByPromise={foodCreatedByPromise(user.email)} userEmail={user.email}></Foods>
+        <Foods
+          foodCreatedByPromise={foodCreatedByPromise(user.email)}
+          userEmail={user.email}
+        />
       </Suspense>
     </div>
   );

@@ -32,7 +32,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-gradient-to-r from-gray-800 via-indigo-900 to-purple-900 shadow-sm px-5">
+    <div className="navbar bg-gradient-to-r from-gray-800 via-indigo-900 to-purple-900 shadow-sm px-5 fixed top-0 w-full z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <button
@@ -65,7 +65,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex items-center gap-2">
-          <img src={logo} className="w-16 h-16" />
+          <img src={logo} className="w-16 h-16" alt="Logo" />
           <div>
             <h2 className="font-bold text-3xl text-white">Bite & Bliss</h2>
             <p className="text-sm text-gray-400 font-bold">
@@ -74,11 +74,13 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
+
       <div className="flex flex-col sm:flex-row gap-3 items-center navbar-end">
-        <ThemeToggleButton></ThemeToggleButton>
+        <ThemeToggleButton />
         {user ? (
           <div className="dropdown dropdown-end">
             <div

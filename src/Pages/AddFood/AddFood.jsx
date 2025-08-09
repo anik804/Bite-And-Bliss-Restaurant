@@ -36,7 +36,7 @@ const AddFood = () => {
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center flex items-center justify-center px-4 sm:px-6 lg:px-8"
+      className="min-h-screen bg-cover bg-center flex items-center justify-center pt-20 px-4 sm:px-6 lg:px-8"
       style={{ backgroundImage: `url(${bg})` }}
     >
       {/* Overlay for better readability */}

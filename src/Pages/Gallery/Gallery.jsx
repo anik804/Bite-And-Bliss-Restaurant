@@ -7,12 +7,12 @@ import Inside from './Outside Environment/Inside';
 
 const Gallery = () => {
   return (
-    <div>
-      <Inside></Inside>
-      <Environment></Environment>
-      <Food></Food>
-      <Seafood></Seafood>
-      <Drinks></Drinks>
+    <div className="pt-24"> {/* Added padding to prevent navbar overlap */}
+      <Inside />
+      <Environment />
+      <Food />
+      <Seafood />
+      <Drinks />
     </div>
   );
 };

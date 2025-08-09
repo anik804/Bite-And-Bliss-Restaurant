@@ -2,6 +2,7 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import FoodCard from "./FoodCard";
+
 const AllFood = () => {
   const [foods, setFood] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -30,11 +31,11 @@ const AllFood = () => {
   );
 
   return (
-    <div>
-            <motion.h1
+    <div className="pt-24"> {/* Added padding to avoid navbar overlap */}
+      <motion.h1
         className="text-4xl font-bold text-center my-10"
         animate={{
-          color: ["#FF0000", "#00FF00", "#0000FF", "#FFD700", "#FF69B4"], // cycle through red, green, blue, gold, pink
+          color: ["#FF0000", "#00FF00", "#0000FF", "#FFD700", "#FF69B4"],
         }}
         transition={{
           duration: 8,
@@ -73,10 +74,10 @@ const AllFood = () => {
           />
         </label>
       </div>
-      {/* {filteredFoods.length} */}
+
       <div className="grid gap-2 grid-cols-1 lg:grid-cols-3 md:grid-cols-2 my-5 mx-5">
         {filteredFoods.map((food) => (
-          <FoodCard food={food} key={food._id}></FoodCard>
+          <FoodCard food={food} key={food._id} />
         ))}
       </div>
     </div>

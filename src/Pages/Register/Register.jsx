@@ -74,7 +74,7 @@ const Register = () => {
   };
 
   return (
-    <div className="hero bg-gradient-to-r from-orange-500 via-yellow-400 to-green-400 min-h-screen">
+    <div className="hero bg-gradient-to-r from-orange-500 via-yellow-400 to-green-400 min-h-screen pt-24">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <Lottie

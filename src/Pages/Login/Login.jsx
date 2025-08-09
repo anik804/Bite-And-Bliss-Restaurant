@@ -51,7 +51,7 @@ const Login = () => {
   };
 
   return (
-    <div className="hero bg-gradient-to-r from-indigo-400 via-purple-700 to-pink-500 min-h-screen py-10">
+    <div className="hero bg-gradient-to-r from-indigo-400 via-purple-700 to-pink-500 min-h-screen pt-24 py-10">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <Lottie animationData={login_lottie} loop={true} />
