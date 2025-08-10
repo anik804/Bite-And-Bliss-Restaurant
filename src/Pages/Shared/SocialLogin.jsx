@@ -20,8 +20,8 @@ const SocialLogin = ({from}) => {
   }
 
   return (
-    <div>
-      <div className="divider">OR</div>
+    <div className="mt-5">
+      {/* <div className="divider">OR</div> */}
       <button onClick={handleGoogleSignIn} className="btn w-full bg-slate-300 text-black border-[#e5e5e5]">
         <svg
           aria-label="Google logo"
