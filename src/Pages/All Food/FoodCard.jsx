@@ -1,33 +1,49 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom"; // corrected import
 
-const FoodCard = ({food}) => {
-
-  const {photo,name,quantity,description,category,cuisine,_id} = food;
+const FoodCard = ({ food }) => {
+  const { photo, name, quantity, description, category, cuisine, _id } = food;
 
   return (
-    <div className="card bg-base-100 w-96 shadow-sm">
-      <figure>
+    <div className="max-w-sm bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
+      {/* Image Section */}
+      <figure className="relative">
         <img
           src={photo}
-          alt="Shoes"
-          className="h-60 w-96"
+          alt={name}
+          className="h-56 w-full object-cover transition-transform duration-300 hover:scale-105"
         />
+        <span className="absolute top-3 left-3 bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
+          {cuisine}
+        </span>
       </figure>
-      <div className="card-body">
-        <h2 className="card-title">
+
+      {/* Content Section */}
+      <div className="p-5 flex-1 flex flex-col">
+        <h2 className="text-xl font-bold text-gray-800 mb-2 line-clamp-1">
           {name}
-          <div className="badge badge-secondary">{cuisine}</div>
         </h2>
-        <p>
+        <p className="text-gray-600 text-sm flex-1 mb-4 line-clamp-3">
           {description}
         </p>
-        <div className="card-actions justify-end">
-          <div className="badge badge-outline">Quantity : {quantity}</div>
-          <div className="badge badge-outline">Category : {category}</div>
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium border border-gray-300">
+            Quantity: {quantity}
+          </span>
+          <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium border border-gray-300">
+            Category: {category}
+          </span>
         </div>
+
+        {/* Button */}
+        <Link to={`/menu/${_id}`}>
+          <button className="w-full bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-lg font-medium transition-colors duration-300 shadow-md">
+            View Details
+          </button>
+        </Link>
       </div>
-      <Link to={`/menu/${_id}`}><button className="btn btn-soft btn-accent w-full">View Details</button></Link>
     </div>
   );
 };
