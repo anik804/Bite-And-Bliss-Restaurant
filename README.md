@@ -8,13 +8,18 @@ The project is live at: [https://bite-and-bliss-restaurant.web.app/](https://bit
 
 ## Key Features
 - Home page with featured content
+- **About Us** - Public route showcasing restaurant information, mission, and team details
 - Browse all food items
 - View detailed information about each food item
-- Food purchase functionality (protected route, requires login)
-- View and manage user orders (protected route)
-- Add new food items (protected route)
-- View user's own food items (protected route)
-- Update existing food items (protected route)
+- **User Dashboard** - Centralized hub for all user-specific features including:
+  - Food purchase functionality (requires login)
+  - View and manage user orders
+  - Add new food items
+  - View user's own food items
+  - Update existing food items
+  - User profile management
+  - Order history tracking
+- **Error Page** - Custom 404 error page with helpful navigation links and user-friendly error messaging
 - Gallery showcasing food and environment
 - User registration and login
 
