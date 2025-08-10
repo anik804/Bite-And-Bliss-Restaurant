@@ -3,6 +3,14 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import FoodCard from "./FoodCard";
 
+const SkeletonCard = () => (
+  <div className="bg-base-200 rounded-xl p-4 animate-pulse">
+    <div className="h-40 bg-gray-300 rounded-md mb-4"></div>
+    <div className="h-4 bg-gray-300 rounded w-3/4 mb-2"></div>
+    <div className="h-4 bg-gray-300 rounded w-1/2"></div>
+  </div>
+);
+
 const AllFood = () => {
   const [foods, setFood] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -22,8 +30,12 @@ const AllFood = () => {
       });
   }, []);
 
-  if (loading) return <div>Loading Our Menu...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (error)
+    return (
+      <div className="pt-24 text-center text-red-500 font-semibold">
+        Error: {error}
+      </div>
+    );
 
   // Filter foods based on search term (case-insensitive)
   const filteredFoods = foods.filter((food) =>
@@ -31,7 +43,7 @@ const AllFood = () => {
   );
 
   return (
-    <div className="pt-24"> {/* Added padding to avoid navbar overlap */}
+    <div className="pt-24 px-4">
       <motion.h1
         className="text-4xl font-bold text-center my-10"
         animate={{
@@ -48,7 +60,7 @@ const AllFood = () => {
       </motion.h1>
 
       <div className="flex justify-center">
-        <label className="input w-3/5 my-5">
+        <label className="input w-3/5 my-5 flex items-center gap-2 border rounded-md px-3">
           <svg
             className="h-[1em] opacity-50"
             xmlns="http://www.w3.org/2000/svg"
@@ -69,16 +81,21 @@ const AllFood = () => {
             type="search"
             required
             placeholder="Search Our Food Items By Name"
+            className="outline-none flex-1"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </label>
       </div>
 
-      <div className="grid gap-2 grid-cols-1 lg:grid-cols-3 md:grid-cols-2 my-5 mx-5">
-        {filteredFoods.map((food) => (
-          <FoodCard food={food} key={food._id} />
-        ))}
+      <div className="grid gap-4 grid-cols-1 lg:grid-cols-3 md:grid-cols-2 my-5">
+        {loading
+          ? Array(6)
+              .fill(0)
+              .map((_, idx) => <SkeletonCard key={idx} />)
+          : filteredFoods.map((food) => (
+              <FoodCard food={food} key={food._id} />
+            ))}
       </div>
     </div>
   );
