@@ -19,16 +19,16 @@ const Navbar = () => {
 
   const links = (
     <>
-      <li className="font-extrabold text-purple-500 mr-10">
+      <li className="font-extrabold text-orange-500 mr-10">
         <NavLink to="/">Home</NavLink>
       </li>
-      <li className="font-extrabold text-orange-400 mr-10">
+      <li className="font-extrabold text-orange-500 mr-10">
         <NavLink to="/allfood">All Food</NavLink>
       </li>
-      <li className="font-extrabold text-lime-400 mr-10">
+      <li className="font-extrabold text-orange-500 mr-10">
         <NavLink to="/gallery">Gallery</NavLink>
       </li>
-      <li className="font-extrabold text-pink-400 mr-10">
+      <li className="font-extrabold text-orange-500 mr-10">
         <NavLink to="/aboutus">About Us</NavLink>
       </li>
     </>
@@ -68,11 +68,11 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex items-center gap-2">
-          <img src={logo} className="w-16 h-16" alt="Logo" />
+          <img src={logo} className="w-12 h-12 " alt="Logo" />
           <div>
-            <h2 className="font-bold text-3xl text-white">Bite & Bliss</h2>
+            <h2 className="font-bold text-xl lg:text-3xl md:2xl text-white">Bite & Bliss</h2>
             <p className="text-sm text-gray-400 font-bold">
-              Taste the Difference.
+              Taste the Different
             </p>
           </div>
         </div>
